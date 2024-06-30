@@ -7,10 +7,23 @@ import About from "./pages/About";
 import MainPage from "./pages/mainPage";
 import Bukety from "./pages/Bukety/index";
 import Plants from "./pages/Plants/index";
+import { SideBar } from "./components/SideBar/SideBar";
+import { useCallback, useState } from "react";
+
 const App = () => {
+  const [showSideBar, setShowSideBar] = useState(() => false);
+
+  const handleShowSideBar = useCallback(
+    () => setShowSideBar((prev) => !prev, []),
+    []
+  );
   return (
     <>
-      <NavBar />
+      <NavBar handleShowSideBar={handleShowSideBar} />
+      <SideBar
+        showSideBar={showSideBar}
+        handleShowSideBar={handleShowSideBar}
+      />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/about" element={<About />} />

@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+
+  .iternal {
+    z-index: 100;
+  }
+
+  .iternal .show {
+    position: fixed;
+    width: 500px;
+    background-color: grey;
+  }
+
+  .blurContainer {
+    position: absolute;
+    background: rgba(21, 31, 52, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 10px;
+    margin-left: 236px;
+  }
+}

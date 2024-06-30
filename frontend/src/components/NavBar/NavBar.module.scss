@@ -19,6 +19,10 @@ $navbar-link-hover-color: #aaa;
   padding: 10px 20px;
   font-family: Arial, sans-serif;
 
+  .burgerButton {
+    display: none;
+  }
+
   .logo {
     margin-right: auto;
     display: flex;
@@ -70,6 +74,25 @@ $navbar-link-hover-color: #aaa;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     padding: 10px;
+
+    .burgerButton {
+      display: block;
+      position: absolute;
+      padding: 10px 15px;
+      left: 5px;
+      top: 10px;
+      border: none;
+      background-color: transparent;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
 
     .logo {
       margin: 0;
